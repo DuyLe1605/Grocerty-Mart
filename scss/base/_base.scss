@@ -1,0 +1,31 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    font-family: Gordita, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+    font: {
+        family: inherit;
+        size: inherit;
+    }
+}
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+a {
+    text-decoration: none;
+}
