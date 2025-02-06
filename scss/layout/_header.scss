@@ -1,0 +1,80 @@
+/*Header*/
+
+// Tạo Place Holder cho việc căn giữa item
+%flexItemsCenter {
+    display: flex;
+    align-items: center;
+}
+.header {
+    background: var(--header-bg-color);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.top-bar {
+    @extend %flexItemsCenter;
+}
+.navbar {
+    margin-left: 144px;
+    &__list {
+        @extend %flexItemsCenter;
+        column-gap: 30px;
+    }
+    &__link {
+        @extend %flexItemsCenter;
+        column-gap: 6px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 2.2rem;
+    }
+    &__arrow {
+        margin-top: 3px;
+    }
+}
+
+.top-act {
+    @extend %flexItemsCenter;
+    margin-left: auto;
+    column-gap: 20px;
+    &__group {
+        @extend %flexItemsCenter;
+
+        min-width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        background: var(--top-act-group-bg-color);
+        transition: 0.25s;
+        &:hover {
+            box-shadow: var(--top-act-group-shadow);
+        }
+    }
+
+    &__group--single &__btn {
+        padding: 13px;
+    }
+    &__btn {
+        @extend %flexItemsCenter;
+        padding: 13px 20px;
+        column-gap: 10px;
+        cursor: pointer;
+    }
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 2.2rem;
+    }
+    &__separate {
+        width: 1px;
+        height: 30px;
+        background: var(--top-act-group-separate);
+        margin: 0 7px;
+    }
+    &__avatar {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+    }
+}

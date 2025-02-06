@@ -1,0 +1,22 @@
+{
+    "name": "project-08",
+    "version": "1.0.0",
+    "description": "",
+    "homepage": "https://github.com/DuyLe1605/Grocerty-Mart#readme",
+    "bugs": {
+        "url": "https://github.com/DuyLe1605/Grocerty-Mart/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DuyLe1605/Grocerty-Mart.git"
+    },
+    "license": "ISC",
+    "author": "",
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "sass": "sass scss:assets/css -w",
+        "minify": "sass scss:assets/css -s compressed"
+    }
+}
