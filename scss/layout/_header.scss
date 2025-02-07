@@ -1,4 +1,5 @@
 /*Header*/
+@use "../abstracts";
 
 // Tạo Place Holder cho việc căn giữa item
 %flexItemsCenter {
@@ -7,14 +8,33 @@
 }
 .header {
     background: var(--header-bg-color);
-    padding-top: 30px;
-    padding-bottom: 30px;
 }
 .top-bar {
     @extend %flexItemsCenter;
+    padding: 30px 0;
+
+    @include abstracts.breakPoint(lg) {
+        padding: 20px 0;
+    }
+    @include abstracts.breakPoint(sm) {
+        padding: 16px 0;
+    }
+    &__more {
+        display: none;
+        @include abstracts.breakPoint(lg) {
+            display: initial;
+        }
+    }
 }
 .navbar {
     margin-left: 144px;
+    @include abstracts.breakPoint(xl) {
+        margin-left: auto;
+    }
+    @include abstracts.breakPoint(lg) {
+        display: none;
+    }
+
     &__list {
         @extend %flexItemsCenter;
         column-gap: 30px;
@@ -46,8 +66,16 @@
         &:hover {
             box-shadow: var(--top-act-group-shadow);
         }
-    }
 
+        @include abstracts.breakPoint(md) {
+            display: none;
+        }
+    }
+    &__group--single {
+        @include abstracts.breakPoint(lg) {
+            display: none;
+        }
+    }
     &__group--single &__btn {
         padding: 13px;
     }
