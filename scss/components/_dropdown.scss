@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 .dropdown {
     position: absolute;
     left: 0;
@@ -5,6 +7,7 @@
     visibility: hidden;
     opacity: 0;
     transition: 0.25s;
+    width: min(1240px, 100%);
     &__inner {
         color: var(--dropdown-color);
         padding: 30px;
@@ -20,5 +23,95 @@
             transform: translateX(-50%);
             filter: var(--dropdown-arrow-color);
         }
+    }
+}
+
+.top-menu {
+    --max-column-width: 292px;
+    --max-inner-height: calc(min(582px, 100vh - 158px) - 60px);
+    position: relative;
+    &__main {
+        height: var(--max-inner-height);
+        width: var(--max-column-width);
+        border-right: 1px solid var(--top-menu-border-color);
+        overflow-y: auto;
+    }
+}
+.menu-column {
+    display: flex;
+    column-gap: 14px;
+    + .menu-column {
+        margin-top: 22px;
+    }
+    &__icon {
+        width: 36px;
+        height: 36px;
+        position: relative;
+        @include abstracts.breakPoint(xl) {
+            display: none;
+        }
+    }
+    &__icon-1,
+    &__icon-2 {
+        object-fit: contain;
+    }
+    &__icon-1 {
+        width: 30px;
+        height: 30px;
+    }
+    &__icon-2 {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    &__content {
+        margin-top: 6px;
+        flex: 1;
+    }
+    &__heading {
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 150%;
+    }
+    &__list {
+        margin-top: 19px;
+    }
+    &__item {
+        &--active .sub-menu {
+            display: grid;
+        }
+    }
+    &__item:hover > &__link,
+    &__item--active > &__link {
+        color: var(--menu-column-link-hover-color);
+        font-weight: 500;
+    }
+    &__link {
+        padding: 6.5px 0;
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 2rem;
+    }
+}
+
+.sub-menu {
+    position: absolute;
+    padding-left: 30px;
+    inset: 0 0 0 291px;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    overflow-y: auto;
+    transition: 0.1s;
+    &--not-main {
+        padding-left: 0;
+        display: grid;
+        position: relative;
+        inset: initial;
+        grid-template-columns: repeat(4, 1fr);
+        height: var(--max-inner-height);
     }
 }

@@ -8,6 +8,9 @@
 }
 .header {
     background: var(--header-bg-color);
+    @include abstracts.breakPoint(lg) {
+        box-shadow: var(--header-shadow);
+    }
 }
 .top-bar {
     @extend %flexItemsCenter;
@@ -40,12 +43,6 @@
         @extend %flexItemsCenter;
     }
     &__item {
-        &:first-child a {
-            padding-left: 0;
-        }
-        &:last-child a {
-            padding-right: 0;
-        }
         &:hover .dropdown {
             visibility: visible;
             opacity: 1;

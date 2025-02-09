@@ -5,6 +5,7 @@
         saturate(4085%) hue-rotate(211deg) brightness(96%) contrast(96%);
     --body-bg-color: #f6f6f6;
     --header-bg-color: #eee;
+
     --top-act-group-bg-color: #fff;
     --top-act-group-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.1);
     --top-act-group-separate: #ededf6;
@@ -13,6 +14,7 @@
         --header-bg-color: #fff;
         --top-act-group-bg-color: #eee;
         --top-act-group-separate: #919191;
+        --header-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
     }
 
     // Dropdown
@@ -20,5 +22,7 @@
         --dropdown-color: #1a162e;
         --dropdown-bg-color: #fff;
         --dropdown-shadow: 0px 40px 90px 20px rgba(200, 200, 200, 0.4);
+        --top-menu-border-color: #d2d1d6;
+        --menu-column-link-hover-color: #0071dc;
     }
 }
